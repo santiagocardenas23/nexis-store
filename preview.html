@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SITEC SAS</title>
+<style>
+body{background:#020817;color:white;font-family:Arial;margin:0}
+header{padding:20px;background:#071226}
+.logo{font-size:40px;font-weight:bold;color:#38BDF8}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:40px}
+.card{background:#071226;border-radius:20px;overflow:hidden;padding:20px}
+.card img{width:100%;height:250px;object-fit:cover;background:white}
+.price{color:#38BDF8;font-size:32px;font-weight:bold}
+button{width:100%;padding:14px;border:none;border-radius:12px;background:#38BDF8;font-weight:bold;cursor:pointer}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;justify-content:center;align-items:center}
+.modal-content{background:white;color:black;width:90%;max-width:1000px;border-radius:20px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.modal-content img{width:100%}
+.close{position:absolute;top:20px;right:20px;background:black;color:white;border:none;width:40px;height:40px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">SITEC SAS</div>
+</header>
+
+<section class="products">
+
+<div class="card">
+<img src="Dell-Latitude-5400-POSTERIOR.webp">
+<h2>Dell Latitude 5400</h2>
+<p>Core i5 · 8GB RAM · SSD 256GB</p>
+<div class="price">$890.000</div>
+<button onclick="openProduct('Dell Latitude 5400','$890.000','Dell-Latitude-5400-POSTERIOR.webp','Laptop empresarial con Intel Core i5, SSD 256GB y pantalla táctil.')">Ver producto</button>
+</div>
+
+<div class="card">
+<img src="iPhone-16-Pro-Max-1.webp">
+<h2>iPhone 16 Pro Max</h2>
+<p>256GB · Titanio premium</p>
+<div class="price">$3.799.000</div>
+<button onclick="openProduct('iPhone 16 Pro Max','$3.799.000','iPhone-16-Pro-Max-1.webp','iPhone premium con cámara profesional y chip avanzado.')">Ver producto</button>
+</div>
+
+<div class="card">
+<img src="Caja-ATX-N19033-copia-600x600.webp">
+<h2>Gaming Lobus RGB</h2>
+<p>Ryzen 5 · 16GB RAM</p>
+<div class="price">$3.150.000</div>
+<button onclick="openProduct('Gaming Lobus RGB','$3.150.000','Caja-ATX-N19033-copia-600x600.webp','PC gamer con RGB y gráficos Radeon.')">Ver producto</button>
+</div>
+
+<div class="card">
+<img src="Docking-Station-Dell-D6000-1.webp">
+<h2>Dock Dell D6000</h2>
+<p>USB-C · HDMI</p>
+<div class="price">$150.000</div>
+<button onclick="openProduct('Dock Dell D6000','$150.000','Docking-Station-Dell-D6000-1.webp','Docking station profesional Dell.')">Ver producto</button>
+</div>
+
+</section>
+
+<div class="modal" id="modal">
+<button class="close" onclick="closeModal()">✕</button>
+<div class="modal-content">
+<div>
+<img id="modalImg" src="">
+</div>
+<div>
+<h1 id="modalTitle"></h1>
+<h2 id="modalPrice" style="color:#38BDF8;font-size:50px"></h2>
+<p id="modalDesc"></p>
+<button>🛒 Agregar al carrito</button>
+</div>
+</div>
+</div>
+
+<script>
+function openProduct(title, price, image, desc){
+document.getElementById('modal').style.display='flex';
+document.getElementById('modalTitle').innerText=title;
+document.getElementById('modalPrice').innerText=price;
+document.getElementById('modalImg').src=image;
+document.getElementById('modalDesc').innerText=desc;
+}
+function closeModal(){
+document.getElementById('modal').style.display='none';
+}
+</script>
+
+</body>
+</html>
